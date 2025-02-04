@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Irenge Bahizire</title>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 10px;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(0, 123, 255, 0.5), rgba(0, 0, 0, 0.8));
+            margin-bottom: 20px;
+        }
+
+        header img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #007bff;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            margin: 0 0 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        header p {
+            max-width: 500px;
+            margin: 10px auto;
+            text-align: justify;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .contact-links a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: #007bff;
+        }
+
+        main {
+          
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: -55px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #007bff;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+            background-color: black;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(0%);
+            transition: filter 0.3s, background-color 0.3s;
+        }
+
+        .project-card:hover img {
+            filter: grayscale(100%);
+        }
+
+        .project-card .description {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover .description {
+            opacity: 1;
+        }
+
+        .project-card .button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover .button {
+            opacity: 1;
+        }
+
+        .popup-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 1000;
+        }
+
+        .popup-modal .close {
+            position: absolute;
+            top: 6px;
+            right: 1px;
+           font-weight: 700;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="irenge.jpg" alt="Irenge Bahizire">
+        <div>
+            <h1>Irenge Bahizire</h1>
+            <p>
+            
+                My name is Irenge Bahizire, and I am currently based in China. I have a deep passion for problem-solving, which is what drew me to programming. I thrive on setting ambitious goals and pushing myself to achieve them, often dedicating long hours to ensure success. My disciplined, focused approach enables me to navigate challenges with determination and persistence. I take immense pride in transforming ideas into tangible projects, witnessing their journey from conception to completion. The creative process of turning visions into reality fuels my drive, while my love for coding and commitment to growth inspire me to deliver impactful and innovative solutions.
+            </p>
+        </div>
+        <div class="contact-links">
+            <a href="mailto:eshibahizire@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+            <a href="https://github.com/irenge1958" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/irenge-bahizire-7b330a264/" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>My Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <img src="fionke.PNG" alt="Project One">
+                    <div class="description">Project One: A full-stack web application.</div>
+                    <button class="button" onclick="showPopup('Project One: A full-stack web application.')">More Info</button>
+                </div>
+                <div class="project-card">
+                    <img src="irengetube.PNG" alt="Project Two">
+                    <div class="description">Project Two: A responsive e-commerce platform.</div>
+                    <button class="button" onclick="showPopup('Project Two: A responsive e-commerce platform.')">More Info</button>
+                </div>
+                <div class="project-card">
+                    <img src="IrengeSocial.PNG" alt="Project Three">
+                    <div class="description">Project Three: A dynamic blog system.</div>
+                    <button class="button" onclick="showPopup('Project Three: A dynamic blog system.')">More Info</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Additional Information</h2>
+            <p class="additional-info">
+                <strong>Position</strong>: System Admin at <a href="https://victorychurcheden.com/messagedujour.php" target="_blank">Victory church Eden</a><br>
+                <strong>Frontend Development</strong>: Proficient in JavaScript and its frameworks, including React.js (state management, reducers, and component architecture). Skilled in using Bootstrap for responsive and mobile-first web design.<br>
+                <strong>Backend Development</strong>: Expertise in creating RESTful APIs using Node.js. Expertise also in PHP using Wamp server. Experience with server-side scripting, authentication, and data processing.<br>
+                <strong>Databases</strong>: Mastery of MySQL and MongoDB, with extensive experience using MongoDB for modern applications.<br>
+                <strong>Other Skills</strong>:Proficient in Postman and Thunder Client for API testing and debugging. Understanding of Docker for containerization and deployment. Version control and collaboration using GitHub. Knowledge of system deployment, maintenance, and hosting.</br>
+               
+                
+                <strong>Languages </strong>:<br>
+                - English: Excellent<br>
+                - French: Excellent<br>
+                - Swahili: Excellent<br>
+                <strong>Reference</strong>: Urbain Bahizire Mweze (Victory Church Eden/CEO) Phone: +243998665575<br>
+            </p>
+        </section>
+    </main>
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup-modal" id="popup-modal">
+        <button class="close" onclick="closePopup()">×</button>
+        <div id="popup-content">Popup Content</div>
+    </div>
+
+    <footer>
+        &copy; 2024 Irenge Bahizire. All Rights Reserved.
+    </footer>
+
+    <script>
+        function showPopup(content) {
+            document.getElementById('popup-content').innerText = content;
+            document.getElementById('popup-modal').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-modal').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
