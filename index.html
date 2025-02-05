@@ -225,18 +225,19 @@
             <div class="projects">
                 <div class="project-card">
                     <img src="fionke.PNG" alt="Project One">
-                    <div class="description">Project One: A full-stack web application.</div>
-                    <button class="button" onclick="showPopup('Project One: A full-stack web application.')">More Info</button>
+                    <div class="description">Church Management System: built using PHP, MySQL, HTML, CSS, and JavaScript.</div>
+                    <button class="button" onclick="showPopup('Church Management System: This is a church platform that automates key operations such as offering receipts, member management, prayer requests, and sermon sharing (written & audio). It features real-time chat for members, admin sermon uploads, user login for receipt printing, and service booking,...Built with PHP, MySQL, HTML, CSS, Bootstrap, and JavaScript. ','https://victorychurcheden.com/messagedujour.php')">More Info</button>
                 </div>
+                
                 <div class="project-card">
                     <img src="irengetube.PNG" alt="Project Two">
-                    <div class="description">Project Two: A responsive e-commerce platform.</div>
-                    <button class="button" onclick="showPopup('Project Two: A responsive e-commerce platform.')">More Info</button>
+                    <div class="description">Youtube Clone: built using Mern,with authentication system using Firebase.</div>
+                    <button class="button" onclick="showPopup('Youtube Clone: This is a YouTube clone built using the MERN stack (MongoDB, Express, React, and Node.js) with user authentication via Google Sign-In (Firebase). Users can sign up or log in using their Gmail accounts, upload videos, and share them publicly. When a user clicks on a video, related videos appear on the right side, and they can like, dislike, comment, or copy the video link. The uploader has the ability to modify or delete their videos. Additionally, the platform includes a search functionality that allows users to find videos based on keywords and tags, ensuring relevant results.','https://irengetubefront.vercel.app/')">More Info</button>
                 </div>
                 <div class="project-card">
                     <img src="IrengeSocial.PNG" alt="Project Three">
-                    <div class="description">Project Three: A dynamic blog system.</div>
-                    <button class="button" onclick="showPopup('Project Three: A dynamic blog system.')">More Info</button>
+                    <div class="description">Facebook & instagram clone: built using Mern with a real-time tchat using websocket.</div>
+                    <button class="button" onclick="showPopup('Facebook && instagram clone:This project, built using the MERN stack (MongoDB, Express, React, and Node.js), integrates features from both Facebook and Instagram. It includes real-time chat and notifications using WebSockets. Users can log in or sign up, publish pictures or videos, and manage their posts by deleting or copying their links. Other users can like, comment, or copy the link of a post, search for other users, and follow or unfollow them. When a user makes a post or follows someone, a notification is instantly sent to all their friends in real-time via WebSockets. Additionally, the platform ensures a seamless social experience by enabling interactive engagement, fostering connections, and delivering instant updates.','https://irenge-socialfront-1eby.vercel.app/')">More Info</button>
                 </div>
             </div>
         </section>
@@ -263,6 +264,20 @@
     <div class="popup-modal" id="popup-modal">
         <button class="close" onclick="closePopup()">×</button>
         <div id="popup-content">Popup Content</div>
+        
+        <a id="popup-link" href="#" target="_blank" style="display:block; color: #fff; text-decoration:none;"><button  style="
+        margin-top: 25px;
+       display: block;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #007bff;
+        position: relative;
+        border: none;
+        color: #fff;
+        padding: 10px ;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: opacity 0.3s;">visit page</button></a>
     </div>
 
     <footer>
@@ -270,11 +285,15 @@
     </footer>
 
     <script>
-        function showPopup(content) {
+        
+        function showPopup(content,link) {
             document.getElementById('popup-content').innerText = content;
             document.getElementById('popup-modal').style.display = 'block';
             document.getElementById('popup-overlay').style.display = 'block';
-        }
+            var popupLink = document.getElementById('popup-link');
+    popupLink.href = link;
+    popupLink.style.display = 'block';
+}
 
         function closePopup() {
             document.getElementById('popup-modal').style.display = 'none';
